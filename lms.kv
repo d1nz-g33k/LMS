@@ -1,0 +1,70 @@
+#:kivy 1.10.1
+
+
+<Asteroids>:
+	canvas:
+		Color:
+			rgba: .7, .7, .8, 1 
+		Rectangle:
+			pos: self.pos
+			size: self.size
+
+<Milkyway>:
+
+	c: Courses
+	a: Attendance
+
+
+	canvas:
+		Color:
+			rgba: 0.15, 0.15, 0.15, 1 
+		Rectangle:
+			pos: self.pos
+			size: self.size
+	
+	BoxLayout:
+		orientation: 'vertical'
+
+	Label:
+        id: Courses
+	    font_size:20
+    	center: root.center_x, root.height * 2/3
+    	size: 140, 30
+    	text: 'Courses'
+    	color: 1,1,1,1 
+    	canvas.before:
+    		Color:
+    			rgba: 0.25, 0.25, 0.25, 1
+    		Rectangle:
+    			pos:self.pos
+    			size:self.size
+
+    Label:
+        id: Attendance
+	    font_size:20
+    	center: root.center_x, root.height/3
+    	text: 'Attendance'
+    	size: 140, 30
+    	color: 1,1,1,1 
+    	canvas.before:
+    		Color:
+    			rgba: 0.25, 0.25, 0.25, 1
+    		Rectangle:
+    			pos:self.pos
+    			size:self.size
+	
+
+<Intro>:
+
+	u: start
+	v: stop
+	
+	Milkyway:
+		id: stop
+		pos: root.pos
+		size: root.size
+	
+	Asteroids:
+		id: start
+		pos: root.pos
+		size: root.size
